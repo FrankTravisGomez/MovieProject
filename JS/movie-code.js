@@ -1,17 +1,12 @@
-// Fetch movies and render them
-fetchMovies();
+console.log("is it working");
 
-function fetchMovies() {
-    fetch('https://developing-shadowed-rayon.glitch.me/movies')
-        .then(res => res.json())
-        .then(renderMovies)
-        .catch(console.error);
-}
-
-function renderMovies(movies) {
-    const html = movies.reverse().map((movie, index) => renderMovie(movie, `movie-${index}`)).join('');
-    document.getElementById('movieRow').innerHTML = html;
-}
+fetch('https://developing-shadowed-rayon.glitch.me/movies')
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+        renderMovies(data);
+    })
+    .catch(error => console.error(error));
 
 function renderMovie(movie, id) {
     return `
@@ -43,29 +38,13 @@ function renderMovie(movie, id) {
     </div>`;
 }
 
-// Search movies and render modal
-const searchButton = document.getElementById('searchButton');
-searchButton.addEventListener('click', searchAndRenderModal);
-
-function searchAndRenderModal() {
-    const searchTerm = document.getElementById('searchBar').value;
-    fetch(`https://developing-shadowed-rayon.glitch.me/movies?q=${searchTerm}`)
-        .then(res => res.json())
-        .then(data => {
-            if (Array.isArray(data) && data.length > 0) {
-                const movie = data.find(movie => movie.title.toLowerCase().includes(searchTerm.toLowerCase()));
-                if (movie) {
-                    const modalContent = renderModal(movie);
-                    document.getElementById('modal').innerHTML = modalContent;
-                    new bootstrap.Modal(document.getElementById('modal')).show();
-                } else {
-                    console.log("No movies found matching that search");
-                }
-            } else {
-                console.log("No movies found");
-            }
-        })
-        .catch(console.error);
+function renderMovies(movies) {
+    let html = '';
+    for (let i = movies.length - 1; i >= 0; i--) {
+        let id = 'movie-' + i;
+        html += renderMovie(movies[i], id);
+    }
+    document.getElementById('movieRow').innerHTML = html;
 }
 
 function renderModal(movie) {
@@ -90,9 +69,36 @@ function renderModal(movie) {
     </div>`;
 }
 
-// Add movie
-const postMovieButton = document.getElementById('submitMovie');
-postMovieButton.addEventListener('click', postMovie);
+function searchAndRenderModal() {
+    const searchTerm = document.getElementById('searchBar').value;
+    fetch(`https://developing-shadowed-rayon.glitch.me/movies?q=${searchTerm}`)
+        .then(response => response.json())
+        .then(data => {
+            if (Array.isArray(data) && data.length > 0) {
+                let movie;
+                if (searchTerm === '') {
+                    return;
+                } else {
+                    movie = data.find(movie => movie.title.toLowerCase().includes(searchTerm.toLowerCase()));
+                }
+                if (movie) {
+                    const modalContent = renderModal(movie);
+                    const modal = document.getElementById('modal');
+                    modal.innerHTML = modalContent;
+                    const modalInstance = new bootstrap.Modal(modal);
+                    modalInstance.show();
+                } else {
+                    console.log("No movies found matching that search");
+                }
+            } else {
+                console.log("No movies found");
+            }
+        })
+        .catch(error => console.error(error));
+}
+
+const searchButton = document.getElementById('searchButton');
+searchButton.addEventListener('click', searchAndRenderModal);
 
 function postMovie() {
     const movieTitle = document.querySelector("#title").value;
@@ -114,17 +120,19 @@ function postMovie() {
         },
         body: JSON.stringify(movieData)
     })
-        .then(res => res.json())
-        .then(console.log)
-        .catch(console.error);
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error(error));
 }
 
-// Delete movie
-const deleteMovieButton = document.getElementById('deleteMovieButton');
-deleteMovieButton.addEventListener('click', deleteMovie);
+const postMovieButton = document.getElementById('submitMovie');
+postMovieButton.addEventListener('click', postMovie);
 
 function deleteMovie(event) {
     const id = event.target.dataset.movieId;
     const element = document.getElementById(id);
     element.remove();
 }
+
+const deleteMovieButton = document.getElementById('deleteMovieButton');
+deleteMovieButton.addEventListener('click', deleteMovie);

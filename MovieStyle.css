@@ -1,0 +1,337 @@
+body{
+    background-color: #424242;
+}
+#navbarImg{
+    height: 30px;
+    width: 30px;
+    /*border: solid 1px red;*/
+}
+header{
+    font-family: 'Bona Nova', serif;
+}
+
+main{
+    /*border: solid 4px red;*/
+    height: 2500px;
+}
+#carouselOne{
+    margin-top: 4em;
+}
+#carImgOne{
+    height: 800px;
+    width: auto;
+}
+#carImgTwo{
+    height: 800px;
+    width: auto;
+}
+#carImgThree{
+    height: 800px;
+    width: auto;
+}
+
+
+#movieRow{
+    margin-top: 150px;
+
+    padding: 4em;
+
+    height: 700px;
+    width: 100%;
+}
+
+.weather-card {
+
+    font-family: 'Bona Nova', serif;
+    height: 615px;
+    width: 250px;
+    /*background: #fff;*/
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    overflow: hidden;
+    transition: all 0.5s;
+    border-radius: 25px 5px 50px 5px;
+
+}
+.weather-card .top{
+    background-image: url("https://i.imgur.com/GWmaW20.jpeg");
+    background-position: center center;
+}
+.weather-card .top:hover{
+    background-image: url("https://media.giphy.com/media/N256GFy1u6M6Y/giphy.gif");
+    background-position: center;
+    background-size: cover;
+    transform: scale(1.1);
+    transition-duration: 2000ms;
+}
+#movie-7 .top{
+    background-image: url("img/upFan.jpg");
+    background-position: center center;
+}
+#movie-7 .top:hover{
+    background-image: url("https://media.giphy.com/media/2c09BdVQs5m3m/giphy.gif");
+    background-position: center;
+    background-size: contain;
+    transform: scale(1.1);
+    transition-duration: 2000ms;
+}
+#movie-6 .top{
+    background-image: url("img/backTo.png");
+    background-position: center center;
+}
+#movie-6 .top:hover{
+    background-image: url("https://media.giphy.com/media/xsF1FSDbjguis/giphy.gif");
+    background-position: center center;
+    transform: scale(1.1);
+    transition-duration: 2000ms;
+}
+#movie-5 .top{
+    background-image: url("img/wolf.jpg");
+    background-position: center center;
+}
+#movie-5 .top:hover{
+    background-image: url("https://media.giphy.com/media/gdwJdym3VuXQr5OfAc/giphy.gif");
+    background-position: center center;
+    background-size: cover;
+    transform: scale(1.1);
+    transition-duration: 2000ms;
+}
+#movie-4 .top{
+    background-image: url("img/pussInBoots.png");
+    background-position: center center;
+}
+#movie-4 .top:hover{
+    background-image: url("https://media.giphy.com/media/V3TtZ4IWyVZgk/giphy.gif");
+    background-position: center center;
+    background-size: cover;
+    transform: scale(1.1);
+    transition-duration: 2000ms;
+}
+#movie-3 .top {
+    background-image: url("img/mummy.jpg");
+    background-position: center center;
+}#movie-3 .top:hover {
+     background-image: url("https://i.gifer.com/Opvf.gif");
+     background-position: center center;
+     background-size: cover;
+     transform: scale(1.1);
+     transition-duration: 2000ms;
+ }
+#movie-2 .top{
+    background-image: url("img/allquiet.jpg");
+    background-position: center center;
+}
+#movie-2 .top:hover{
+    background-image: url("https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/f7683d20-2948-460f-8f91-a13fe519b593/290OVXKXLGS4IAOHS9PMAT39/wf-min.gif");
+    background-position: center;
+    background-size: cover;
+    transform: scale(1.1);
+    transition-duration: 2000ms;
+}
+#movie-1 .top{
+    background-image: url("img/interstellar.jpg");
+    background-position: center;
+    background-size: cover;
+}
+#movie-1 .top:hover{
+    background-image: url("https://i.gifer.com/NJsL.gif");
+    background-position: center;
+    background-size: contain;
+    transform: scale(1.1);
+    transition-duration: 2000ms;
+}
+#movie-0 .top{
+    background-image: url("img/godfather.jpg");
+    background-position: center center;
+}
+#movie-0 .top:hover{
+    transform: scale(1.1);
+    transition-duration: 2000ms;
+    background-image: url("https://i.gifer.com/ERqp.gif");
+    background-position: center;
+}
+.weather-card:hover,
+.weather-card:focus-within{
+
+    /*scale: 105%;*/
+    text-decoration-color: black;
+    transform: scale(1.05);
+    transition: transform 400ms ease-in;
+    box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 15px, rgba(240, 46, 170, 0.2) 0px 25px, rgba(240, 46, 170, 0.1) 0px 30px, rgba(240, 46, 170, 0.05) 0px 25px;*/
+}
+.weather-card .top {
+    position: relative;
+    height: 420px;
+    width: 100%;
+    overflow: hidden;
+
+    background-size: cover;
+
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    text-decoration-color: goldenrod;
+}
+.weather-card .top .wrapper {
+    padding: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.weather-card .top .wrapper .heading {
+    margin-top: 20px;
+    font-size: 35px;
+    font-weight: 400;
+    color: #fff;
+}
+.weather-card .top .wrapper .location {
+    margin-top: 20px;
+    font-size: 21px;
+    font-weight: 400;
+    color: #fff;
+}
+
+
+.weather-card .top:after {
+    transform: scale(2.3);
+}
+.weather-card .bottom {
+    padding: 0 10px;
+    background: #fff;
+}
+.weather-card .bottom .wrapper .forecast {
+    overflow: hidden;
+    margin: 0;
+    font-size: 0;
+
+    padding-top: 20px;
+    max-height: 155px;
+}
+.weather-card .bottom .wrapper .forecast a {
+    text-decoration: none;
+    color: #000;
+}
+.modal img{
+    max-width: 300px;
+    max-height: 300px;
+    margin: 1em;
+}
+
+.weather-card .bottom .wrapper .forecast li {
+    display: block;
+    font-size: 25px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.25);
+    line-height: 1em;
+    margin-bottom: 30px;
+}
+
+.weather-card .bottom .wrapper .forecast li.active {
+    color: rgba(0, 0, 0, 0.8);
+}
+#addMovie{
+    /*border: solid green 1px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-top: 40px;
+
+}
+#addMovie h4{
+    margin: 2rem;
+}
+#addMovieBtn{
+    height: 50px;
+}
+#addMovieBtn:hover,
+#addMovieBtn:focus {
+    animation: pulse 1s infinite;
+    box-shadow: 0 0 0 2em transparent;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 var(--hover);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 0 1em var(--hover);
+        transform: scale(1.2);
+    }
+    100% {
+        box-shadow: 0 0 0 0 var(--hover);
+        transform: scale(1);
+    }
+}
+
+body {
+    background-color: #424242;
+}
+
+#navbarImg {
+    height: 30px;
+    width: 30px;
+}
+
+header {
+    font-family: 'Bona Nova', serif;
+}
+
+main {
+    height: 2500px;
+}
+
+#carouselOne {
+    margin-top: 4em;
+}
+
+#carImgOne,
+#carImgTwo,
+#carImgThree {
+    height: auto;
+    width: 100%;
+    max-height: 800px;
+    object-fit: cover;
+}
+
+#movieRow {
+    margin-top: 150px;
+    padding: 4em;
+    height: 700px;
+    width: 100%;
+}
+
+.weather-card {
+    font-family: 'Bona Nova', serif;
+    height: 615px;
+    width: 250px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    overflow: hidden;
+    transition: all 0.5s;
+    border-radius: 25px 5px 50px 5px;
+}
+
+.weather-card .top {
+    background-image: url("https://i.imgur.com/GWmaW20.jpeg");
+    background-position: center center;
+}
+
+.weather-card .top:hover {
+    background-image: url("https://media.giphy.com/media/N256GFy1u6M6Y/giphy.gif");
+    background-position: center;
+    background-size: cover;
+    transform: scale(1.1);
+    transition-duration: 2000ms;
+}
+
+#movie-7 .top {
+    background-image: url("img/upFan.jpg");
+    background-position: center center;
+}
+
+#movie-7 .top:hover {
+    background-image: url("https://media.giphy.com/media/2c09BdVQs5m3m/giphy.gif");
+    background-position: center;
+    background-size: contain;
+    transform: scale(1.1);
+    transition-duration: 2000ms;
+}
